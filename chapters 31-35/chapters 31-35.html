@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chapters 31-35</title>
+    <script>
+        //Question 1
+        var date = new Date();
+        document.write(date);
+        document.write("<hr>");
+
+        //Question 2
+        var newDate = new Date();
+        var monthNum = newDate.getMonth();
+        var months = ["Jan","Feb","March","April","May","June","July","August","September","October","November","December"];
+        var currentMonth = months[monthNum];
+        document.write("Current month:"+ currentMonth);
+        document.write("<hr>");
+
+        //Question 3
+        var newDate = new Date();
+        var dayNum = newDate.getDay();
+        var days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+        var today = days[dayNum];
+        document.write("Today is "+ today);
+        document.write("<hr>");
+
+        //Question 4
+        if(today=="Sat"||today=="Sun"){
+            document.write("It's Fun day");
+        }
+        else{
+            document.write("It's not fun day")
+        }
+        document.write("<hr>");
+
+        //Question 5
+        var newDate = new Date();
+        var dateNum = newDate.getDate();
+        if(dateNum<16){
+            document.write("First fifteen days of the month");
+        }
+        else{
+            document.write("Last days of the month")
+        }
+        document.write("<hr>");
+
+        //Question 6
+        var newDate = new Date();
+        var TimeInMinutes;
+        var TimeInMiliseconds = newDate.getTime();
+        TimeInMinutes = TimeInMiliseconds/(1000*60);
+        document.write("Current Date: "+ newDate+"<br>");
+        document.write("Elapsed miliseconds since January 1, 1970: "+ TimeInMiliseconds +"<br>");
+        document.write("Elapsed minutes since January 1, 1970: "+ TimeInMinutes+"<br>");
+        document.write("<hr>");
+
+        //Question 7
+        var newDate = new Date();
+        var hours = newDate.getHours();
+        if(hours<13){
+            document.write("Its AM");
+        }
+        else{
+            document.write("Its PM");
+        }
+        document.write("<hr>");
+
+        //Question 8
+        var newDate = new Date();
+        var lastDate = new Date("Dec 31 2020 00:00:00");
+        document.write(lastDate);
+        document.write("<hr>");
+        
+        //Question 9
+        var ramadanDate = new Date("June 21, 2017");
+        var ramadanPassedMili_s = newDate.getTime()-ramadanDate.getTime();
+        var ramadanPassedDays = ramadanPassedMili_s/(1000*60*60*24);
+        var ramadanPassedfixDays = Math.floor(ramadanPassedDays);
+        document.write(ramadanPassedfixDays+" Days have passed since 1st Ramadan");
+        document.write("<hr>");
+
+       //Question 10
+       var refernceDate = new Date("December 05, 2015");
+       var beginningOf2015 = new Date("January 01, 2015");
+       var timeElapsed = refernceDate.getTime()- beginningOf2015.getTime();
+       var timeElapsedSec = timeElapsed/1000;
+       document.write("On reference date "+refernceDate+"<br>"+timeElapsedSec+" seconds had passed since beginning of 2015");
+       document.write("<hr>");
+
+       //Question 11
+       var newDate = new Date();
+       document.write("Current date: "+newDate+"<br>");
+       var currentHour = newDate.getHours();
+       var oneHourAgo = currentHour-1;
+        newDate.setHours(oneHourAgo);
+        document.write( " 1 hour ago, it was "+ newDate);
+        document.write("<hr>");
+
+        //Question 12
+        var newDate2 = new Date();
+        document.write("Current date: "+newDate2+"<br>");
+        var currentYear = newDate2.getFullYear();
+        var hundredYearsAgo = currentYear-100;
+         newDate2.setFullYear(hundredYearsAgo);
+        document.write("100 years back, it was: "+newDate2);
+        document.write("<hr>");
+
+        //Question 13
+        var userAgeInput = +prompt("Enter your age");
+        document.write("Your age is "+userAgeInput+"<br>");
+        var currentDate = new Date();
+        var currentyear2 = currentDate.getFullYear();
+        currentDate.setFullYear(currentyear2 - userAgeInput);
+        var birthYear = currentDate.getFullYear()
+        document.write("Your birth year is "+ birthYear);
+        document.write("<hr>");
+        
+        //Question 14
+        var customerName = "ABC Customer";
+        var month = "January";
+        var numberOfUnits = +prompt("Enter number of units");
+        var numberOfUnitsfixed = numberOfUnits.toFixed(2);
+        var chargesPerUnit = 16;
+        var netAmount = numberOfUnitsfixed*chargesPerUnit;
+        var latePayment = 350;
+        var grossAmount = netAmount+latePayment;
+        document.write("<h2>K-Electric Bill</h2>");
+        document.write("Customer Name: "+customerName+"<br>");
+        document.write("Month: "+month+"<br>");
+        document.write("Number of units: "+numberOfUnitsfixed+"<br>");
+        document.write("Charges per unit: "+chargesPerUnit+"<br>");
+        document.write("Net Amount Payable (within Due date): "+netAmount+"<br>");
+        document.write("Late Payment surcharge: "+latePayment+"<br>");
+        document.write("Gross Amount Payable (after Due Date): "+grossAmount+"<br>");
+        document.write("<hr>");
+
+        //Question 15
+        function block(){};
+
+        //Question 16
+        function newdate(){
+            var d = new Date();
+            document.write(d);
+        }
+        newdate();
+        document.write("<hr>");
+
+        //Question 17
+        var firstName = prompt("Enter your first name");
+        var secondName = prompt("Enter your second name");
+
+        function name(first, second){
+            var fullName = first+" "+second;
+            document.write(fullName);
+        }
+        name(firstName,secondName);
+        document.write("<hr>");
+
+        //Question 18
+        function numbers(firstNum, secondNum){
+            var sum = firstNum+secondNum;
+            return sum;
+        }
+        var sum = numbers(10,5);
+        document.write(sum);
+        document.write("<hr>");
+        
+        //Question 1
+        function calculate(){
+            var firstNumber = +prompt("Enter first number");
+            var secondNumber = +prompt("Enter second number");
+            var operator = prompt("Enter calcution operator");
+
+            function calculator(firstValue, SecondValue){
+               var result; 
+                if (operator == "+"){
+                    result = firstValue+SecondValue;
+                }
+                else if (operator == "-"){
+                    result = firstValue-SecondValue;
+                }
+                else if (operator == "*"){
+                    result = firstValue*SecondValue;
+                }
+                else if (operator == "/"){
+                    result = firstValue/SecondValue;
+                }
+                else if (operator == "%"){
+                    result = firstValue%SecondValue;
+                }
+                else{
+                    document.write("Sorry! enter valid operator<br>");
+                }
+                document.write("calculation result:" + result+"<br>");
+            }
+            calculator(firstNumber,secondNumber)
+        }
+        calculate();
+        document.write("<hr>");
+
+        //Question 20
+        function squareNum(firstArg, secondArg){
+            var sqaureFirstArg = firstArg*firstArg;
+            var sqauresecondArg = secondArg*secondArg;
+            document.write("sqaure of argument: "+sqaureFirstArg+ ","+sqauresecondArg);
+        }
+        squareNum(10,25);
+        document.write("<hr>");
+
+        //Question 21(factorial of number)
+        function factorial(x) {
+            if (x > 1)
+                return x * factorial(x - 1);
+            return 1
+        }
+        var result = factorial(2)
+        alert(result);
+        document.write("<hr>");
+
+        //Question 22
+        var countingStartNum = +prompt("Enter counting start number");
+        var countingEndNum = +prompt("Enter counting end number");
+        countingNum(countingStartNum,countingEndNum);
+        function countingNum(start,end){
+            for(var i=start; i<(end+1); i++){
+                document.write(i+" | ")
+            }
+        }
+        document.write("<hr>");
+
+        //Question 23
+        function calculateHypotenuse(){
+            var baseInput = +prompt("Enter base value");
+            var perpendicularInput = +prompt("Enter perpendicular value");
+            var hypotenuse = baseInput+perpendicularInput;
+            document.write("Base= "+baseInput+ " perpedicular= "+perpendicularInput+"<br>");
+            document.write("Hypotenuse= "+hypotenuse+"<br>");
+
+            function calculateSquare(base,perpendicular){
+                var baseSqaure = base*base;
+                var perpendicularSqaure = perpendicular*perpendicular;
+                var hypotenuseSquare = baseSqaure+perpendicularSqaure;
+                document.write("Hypotenuse<sup>2</sup>= "+hypotenuseSquare+"<br>");
+            }
+            calculateSquare(baseInput,perpendicularInput);
+        }
+        calculateHypotenuse()
+        document.write("<hr>");
+
+        //Question 24
+            //i
+            function areaOfRect(width, height){
+                document.write("area of rectangle is:"+ width*height);
+            }
+            areaOfRect(10,5);
+            // ii
+            function inputArea(){
+                var rectWidth = 4;
+                var rectHeight = 5;
+            
+                function areaOfRect2(width,height){ 
+                    var area = width*height;
+                    document.write("area of rectangle is:"+ area);
+                }
+                areaOfRect2(rectWidth, rectHeight);
+            }
+            inputArea();
+            document.write("<hr>");
+
+            //Question 25
+            var palindromeInput = prompt("Enter a word");
+            function palindrome(word){
+                var lowerWord = word.toLowerCase()
+                var wordReverse = word.split("").reverse().join("");
+                if(lowerWord===wordReverse){
+                    document.write("the word is palindrome")
+                }
+                else{
+                    document.write("the word is not palindrome");
+                }
+            }
+            palindrome(palindromeInput);
+            document.write("<hr>");
+
+            //Question 26
+            function str(string){
+                var Words=string.split(" ");                    // will split the string delimited by space into an array of words
+
+                for (var j=0; j<Words.length; j++){             // str.length holds the number of occurrences of the array.
+                    var Letters = Words[j].split("");           // splits the array occurrence into an array of letters
+                    Letters[0] = (Letters[0]).toUpperCase();    // converts the first occurrence of the array to uppercase
+                    Words[j] = Letters.join("");                // converts the array of letters back into a word.
+                    
+                }
+                document.write(Words.join(" ")+"<br>");                 //  converts the array of words back to a sentence.
+             }
+            str("the quick brown fox");
+
+            //Question 27
+             function longestWord(phrase){
+                 var phrase = phrase.split(" ");
+                 var longestWordNum = 0;
+                 for (var k=0; k<phrase.length; k++){
+                    if(phrase[k].length>longestWordNum){
+                        longestWordNum = phrase[k].length;
+                        var longestWord = phrase[k];
+                    }
+                 }
+                 document.write(longestWord+"<br>")
+              }
+              longestWord("Web Development Tutorial")
+              document.write("<hr>");
+
+              //Question 28
+              function countOccurrenceInput(){
+                  var wordInput = prompt("Enter a word to check occurence of a letter");
+                  var letterInput = prompt("Enter the letter to check occurence");
+                  wordInput = wordInput.toLowerCase();
+                  letterInput = letterInput.toLowerCase();
+                  
+                function countOccurrence(word,letter){
+                    var occurenceNum = 0;
+                    for (l=0; l<word.length; l++){
+                        if (word.charAt(l)==letter){
+                            occurenceNum+=1;
+                        }
+                    }
+                    document.write("the number of occurence of letter is "+occurenceNum+"<br>");
+                }
+                countOccurrence(wordInput,letterInput);
+            }
+            countOccurrenceInput();
+            document.write("<hr>");
+              //Question 29
+              
+              function calcCircumference(r){
+                  var circumference = 2*(3.14)*r;
+                  document.write("The cicumference of circle is "+circumference+"<br>")
+              }
+              function calcArea(r){
+                  var area = (3.14)*(r*r);
+                  document.write("The area of circle is "+area+"<br>")
+              }
+              calcCircumference(10);
+              calcArea(5);
+ </script>
+</head>
+<body>
+    
+</body>
+</html>

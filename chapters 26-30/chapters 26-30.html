@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chapters 26-30</title>
+    <script>
+        //Question 1
+            //a
+            var userNum = +prompt("Enter a posistve number");
+            document.write("Number: "+userNum+"<br>");
+            //b
+            var mathRound = Math.round(userNum);
+            document.write("round off value: "+mathRound+"<br>");
+            //c
+            var mathfloor =Math.floor(userNum);
+            document.write("floor value: "+mathfloor+"<br>");
+            //d
+            var mathCeil = Math.ceil(userNum);
+            document.write("ceil value: "+mathCeil+"<br>");
+        document.write("<hr>");
+
+        //Question 2
+            var userNum2 = +prompt("Enter a negative number");
+            //a
+            document.write("Number: "+userNum2+"<br>");
+            //b
+            var mathRound2 = Math.round(userNum2);
+            document.write("round off value: "+mathRound2+"<br>");
+            //c
+            var mathfloor2 =Math.floor(userNum2);
+            document.write("floor value: "+mathfloor2+"<br>");
+            //d
+            var mathCeil2 = Math.ceil(userNum2);
+            document.write("ceil value: "+mathCeil2+"<br>");
+        document.write("<hr>");
+
+        //Question 3
+        var userNumber = prompt("Enter negative number");
+        if(userNumber.charCodeAt(0)==45){
+            document.write("The absolute value of "+userNumber+" is: "+userNumber.slice(1));
+        }
+        document.write("<hr>");
+
+        //Question 4
+        var randomNum = Math.random();
+        var randomNumRange = randomNum*6;
+        var randomNumStart = randomNumRange+1;
+        var randomNumfloor = Math.floor(randomNumStart);
+
+        document.write("Random dice value: "+ randomNumfloor+"<br>");
+        document.write("<hr>");
+
+        //Question 5
+        var randomCoin = Math.random();
+        var randomCoinRange = randomCoin*2;
+        var randomCoinStart = randomCoinRange+1;
+        var randomCoinfloor = Math.floor(randomCoinStart);
+
+        if(randomCoinfloor==2){
+            document.write(randomCoinfloor+"<br>");
+            document.write("Random coin value: Heads <br>");
+        }
+        else{
+            document.write(randomCoinfloor+"<br>");
+            document.write("Random coin value: Tails <br>");
+        }   
+        document.write("<hr>");
+
+        //Question 6
+         var randomNumber = Math.random();
+         var randomNumberRange = randomNumber*100;
+         var randomNumberStart = (randomNumberRange+1);
+         var randomNumberFix = Math.floor(randomNumberStart);
+
+         document.write("random number between 1 and 100: "+ randomNumberFix+"<br />");
+         document.write("<hr>");
+
+         //Question 7
+         var weight = prompt("Enter your weight");
+         var parsefloatweight = parseFloat(weight);
+         document.write("The weight of user is "+parsefloatweight+" kilograms"+"<br>");
+         document.write("<hr>");
+
+         //Question 8
+         var secretRandomNum = Math.random();
+         var secretNumRange = secretRandomNum*10;
+         var secretNumStart = secretNumRange+1;
+         var secretNumFix = Math.floor(secretNumStart);
+         var userSecretNum = +prompt("Enter the secret number");
+        if(userSecretNum==secretNumFix){
+            document.write("Congratulaions! you entered Correct number");
+        }
+        else{
+            document.write("Sorry,try again. the secret number is "+ secretNumFix);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

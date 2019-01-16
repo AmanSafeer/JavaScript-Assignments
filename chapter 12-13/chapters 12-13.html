@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chapter 12-13</title>
+    <script>
+        //question 1
+        var character = prompt("Enter a number or letter");
+        if (character.charCodeAt(0) >= 65 && character.charCodeAt(0) <= 90 ){
+            alert("Uppercase letter");
+        }
+        else if (character.charCodeAt(0) >= 97 && character.charCodeAt(0) <= 122 ){
+            alert("lowercase letter");
+        }
+        else{
+            alert("number");
+        }
+
+        //Question 2
+        var int1 = +prompt("Enter first integer");
+        var int2 = +prompt("Enter second integer");
+        if (int1>int2){
+            alert(int1);
+        }
+        else if (int1<int2){
+            alert(int2);
+        }
+        else{
+            alert("Integers are equal");
+        }
+
+        //Question 3
+        var number = prompt("Enter a number");
+        if (number > 0){
+            alert("positive number");
+        }
+        else if (number < 0){
+            alert("negative number");
+        }
+        else if (number == 0){
+            alert("Zero")
+        }
+
+        //Question 4
+        var letter = prompt("Enter a letter");
+        if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u"){
+            alert("true");
+        }
+        else{
+            alert("false");
+        }
+        //Question 5
+            //a
+            var correctPass = "amansafeer";
+            //b
+            var password = prompt("Enter the password");
+            //c
+            if (password === ""){
+               var password2 = prompt("Please enter your password");
+               if (password2 === correctPass){
+                    alert("Correct! The password you entered matches the original password");
+               }
+               else{
+                   alert("Incorrect password");
+               }
+            }
+            else if (password === correctPass){
+                alert("Correct! The password you entered matches the original password");
+            }
+            else{
+                alert("Incorrect password");
+            }
+        //Question 6
+        var greeting;
+         var hour = 13; 
+         if (hour < 18) {
+              greeting = "Good day";
+         }     
+         else{
+              greeting = "Good evening";
+        }
+        //Question 7
+         var time = prompt("Enter the time");
+         if(time >= 0000 && time < 1200){
+            alert("Good morning!");
+         }
+         else if (time >= 1200 && time < 1700){
+             alert("Good afternoon");
+         }
+         else if (time >= 1700 && time < 2100){
+             alert("Good evening");
+         }
+         else if (time >= 2100 && time <= 2359){
+             alert("Good night");
+         }  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*#para{
+            font-size:30px;
+        }*/
+    </style>
+</head>
+<body>
+    <p id="para" style="font-size:20px;">Hello World!</p>
+    <p><button onClick="zoomIn()">Zoom In</button> <button onClick="zoomOut()">Zoom Out</button></p> 
+
+<script>
+    function zoomIn(){
+        var fontSize = parseInt(document.getElementById("para").style.fontSize);
+        fontSize +=10;
+       document.getElementById("para").style.fontSize = fontSize +"px"; 
+    }
+    function zoomOut(){
+        var fontSize = parseInt(document.getElementById("para").style.fontSize);
+        fontSize -=10;
+       document.getElementById("para").style.fontSize = fontSize +"px"; 
+    }
+</script>
+</body>
+</html>

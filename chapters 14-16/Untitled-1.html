@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chapter 21-25</title>
+    <script>
+        var arr = ["karachi", "lahore", "islamabad","peshawar"];
+        var input = prompt("Enter your city");
+        input = input.toLowerCase();
+        for(var i=0; i<arr.length; i++){
+            if(input===arr[i]){
+                alert("welcome to "+input);
+            }
+        }
+        var array = ["Karachi", "Lahore", "Islamabad","Peshawar"];
+        var city = prompt("Enter yor city");
+        var firstChar = city.slice(0,1);
+        var otherChar = city.slice(1);
+        firstChar = firstChar.toUpperCase();
+        otherChar =otherChar.toLowerCase();
+        var cityName=firstChar+otherChar;
+        for (j=0; j<array.length; j++){
+            if(cityName===array[j]){
+                alert("welcome to "+ cityName);
+            }
+            else{
+                alert("sorry");
+            }
+        }
+        //var text ="asd  tojjh dsaf k sdf world war II sdfafgf ghgfd gfas  asd  tojjh dsaf k sdf world war II sdfafgf ghgfd gfas asd  tojjh dsaf k sdf world war II sdfafgf ghgfd gfa";
+        //for (var a = 0; a<text.length; a++){
+            //if(text.slice(a,a+12)==="world war II"){
+               // text=text.slice(0,a)+"the second world war"+text.slice(a+12);
+
+           // }
+       // }
+       var text = "abc world war II abc bcd world war II " 
+       text=text.slice(0,4)+"the second world war"+text.slice(4+12);
+       console.log(text);         
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

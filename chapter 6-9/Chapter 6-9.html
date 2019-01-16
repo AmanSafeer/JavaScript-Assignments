@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript chapter6-9</title>
+    <script>
+        //chapter6-9
+        //Question 1
+        document.write("Result:<br>");
+        var a = 10;
+        document.write("The value of a is: "+ a + "<hr><br>" );
+
+        var b = ++a;
+        document.write("The value of ++a is: " + b  + "<br>");
+        document.write("Now the value of a is: " + a + "<br><br>");
+
+        var b= a++;
+        document.write("The value of a++ is: " + b  + "<br>");
+        document.write("Now the value of a is: " + a + "<br><br>");
+
+        var b = --a;
+        document.write("The value of --a is: " + b  + "<br>");
+        document.write("Now value of a is: " + a + "<br><br>");
+
+        var b = a--;
+        document.write("The value of --a is: " + b  + "<br>");
+        document.write("Now value of a is: " + a + "<br><hr>");
+
+        //Question 2
+        var a = 2;
+        var b = 1;
+        var result = --a - --b + ++b + b--
+            //--a = 1
+            //--a - --b = 1
+            //--a - --b + ++b =2
+            //--a - --b + ++b + b-- =3
+        document.write("a is: "+ a  + "<br>");
+        document.write("b is: "+ b  + "<br>");
+        document.write("result is: "+result + "<hr>");
+
+        //Question 3
+        var name = prompt("Enter your name");
+        alert("Hello "+name);
+
+        //Question 5
+        var number = prompt("Enter a number","5");
+        if (number === number) {
+            document.write(number + "x" + "1 =" + (number*1)+ "<br>");
+            document.write(number + "x" + "2 =" + (number*2)+ "<br>");
+            document.write(number + "x" + "3 =" + (number*3)+ "<br>");
+            document.write(number + "x" + "4 =" + (number*4)+ "<br>");
+            document.write(number + "x" + "5 =" + (number*5)+ "<br>");
+            document.write(number + "x" + "6 =" + (number*6)+ "<br>");
+            document.write(number + "x" + "7 =" + (number*7)+ "<br>");
+            document.write(number + "x" + "8 =" + (number*8)+ "<br>");
+            document.write(number + "x" + "9 =" + (number*9)+ "<br>");
+            document.write(number + "x" + "10 =" + (number*10)+ "<br><hr>");
+        }
+
+        //Question 6
+            //a
+            var sub1 = prompt("Enter 1st subject");
+            var subName1 = sub1;
+            var sub2 = prompt("Enter 2nd subject"); 
+            var subName2 = sub2;
+            var sub3 = prompt("Enter 3rd subject"); 
+            var subName3 = sub3;
+            //b
+            var totalMarks = 100;
+            //c
+            var obt1 = prompt("Enter obtained marks for " + subName1, "0");
+            var obtMarks1 = obt1;
+            //d
+            var obt2 = prompt("Enter obtained marks for " + subName2, "0");
+            var obtMarks2 = obt2;
+            var obt3 = prompt("Enter obtained marks for " + subName3, "0");
+            var obtMarks3 = obt3;
+            //e
+            var per1 = (obtMarks1/totalMarks)*100;
+            var per2 = (obtMarks2/totalMarks)*100;
+            var per3 = (obtMarks3/totalMarks)*100;
+
+            var sumofTotalMarks = totalMarks*3;
+            var sumofObtMarks = obtMarks1+obtMarks2+obtMarks3;
+            var sumofper = ((per1+per2+per3)/sumofTotalMarks )*100;
+
+            document.write("<table><thead><tr><th>Subject</th><th>TotalMarks</th><th>Obtained Marks</th><th>Percentage</th></tr></thead>");
+            document.write("<tbody><tr><td>"+subName1+"</td><td>"+totalMarks+"</td><td>"+obtMarks1+"</td><td>"+per1+"%</td></tr>")
+            document.write("<tr><td>"+subName2+"</td><td>"+totalMarks+"</td><td>"+obtMarks2+"</td><td>"+per2+"%</td></tr>")
+             document.write("<tr><td>"+subName3+"</td><td>"+totalMarks+"</td><td>"+obtMarks3+"</td><td>"+per3+"%</td></tr></tbody>")
+            document.write("<tfoot><tr><td></td><td>"+sumofTotalMarks+"</td><td>"+sumofObtMarks+"</td><td>"+sumofper+"%</td></tr></tfoot></table>")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

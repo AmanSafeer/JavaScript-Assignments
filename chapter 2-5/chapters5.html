@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chapter 5</title>
+    <script>
+        //Question 1
+        var a = 3;
+        var b = 5;
+        var sum = a+b;
+        document.write("<h1>"+"Sum of " + a + " and " + b + " is " + sum+"</h1><hr>");
+
+        //Question 2
+        var subtraction = a-b;
+        document.write("<h1>"+"Subtraction of " + b + " from " + a + " is " + subtraction+"</h1>");
+
+        var multiplication = a*b;
+        document.write("<h1>"+"Multiplication of " + a + " with " + b + " is " + multiplication+"</h1>");
+
+        var divison = b/a;
+        document.write("<h1>"+"Divison of " + b + " by " + a + " is " + divison+"</h1>");
+
+        var modulus = b%a;
+        document.write("<h1>"+"Modulus of " + b + " by " + a + " is " + modulus+"</h1><hr>");
+
+        //Question 3
+            //(a)
+            var variableName;
+            //(b)
+            document.write("<h2>"+"Value after variable declaration is: " + variableName+"</h2>");
+            //(C)
+            var newNum = 10;
+            //(d)
+            document.write("<h2>"+"Initial value is: " + newNum+"</h2>");
+            //(e)
+            newNum = newNum + 5; 
+            //(f)
+            document.write("<h2>"+"Value after Increment is: " + newNum+"</h2>");
+            //(g)
+            newNum = newNum + 7;
+            //(h)
+            document.write("<h2>"+"Value after addition is: " + newNum+"</h2>");
+            //(i)
+            newNum = newNum - 2;
+            //(j)
+            document.write("<h2>"+"Value after decrement is: " + newNum+"</h2>");
+            //(k)
+            var vardivision = newNum%3;
+            //(l)
+            document.write("<h2>"+"The remainder is:  " + vardivision+"</h2><hr>");
+
+        //Question  4
+        var movieTicketCost = 600;
+        var buyingTicketCost = 5;
+        var totalTicketCost = movieTicketCost * buyingTicketCost + "PKR";
+        document.write("<h2>"+"Total cost to buy 5 tickets to a movie is: " + totalTicketCost +"</h2><hr>");
+
+        //Question 5
+        var table = 5;
+        document.write("<h2>"+"Table of 5"+"</h2>")
+        document.write(table + "x 1 =" + table*1+ "<br>");
+        document.write(table + "x 2 =" + table*2+"<br>");
+        document.write(table + "x 3 =" + table*3+"<br>");
+        document.write(table + "x 4 =" + table*4+"<br>");
+        document.write(table + "x 5 =" + table*5+"<br>");
+        document.write(table + "x 6 =" + table*6+"<br>");
+        document.write(table + "x 7 =" + table*7+"<br>");
+        document.write(table + "x 8 =" + table*8+"<br>");
+        document.write(table + "x 9 =" + table*9+"<br>");
+        document.write(table + "x 10 =" + table*10+"<hr>");
+       
+       //Question 6
+            //a
+            var tempInCelsius = 30;
+            //b
+            var convertToFahrnheit = (tempInCelsius * 9/5) + 32;
+            document.write( tempInCelsius + "<sup>o</sup>C is " + convertToFahrnheit + "<sup>o</sup>F<br>");
+            //c
+            var tempInFahrnheit = 80;
+            //d
+            var convertToCelsius = (tempInFahrnheit-32)*5/9;
+            document.write( tempInFahrnheit + "<sup>o</sup>F is " + convertToCelsius + "<sup>o</sup>C<hr>");
+
+        //Question 7    
+            //a
+            var priceOfItem1 = 500;
+            //b
+            var priceOfItem2 = 600;
+            //c
+            var orderedQuanOfItem1 = 6;
+            //d 
+            var orderedQuanOfItem2 = 5;
+            //e
+            var shippingcharges = 200;
+
+        var totalcost = ((priceOfItem1 * orderedQuanOfItem1) + (priceOfItem2 * orderedQuanOfItem2) + shippingcharges); 
+        document.write("<h1>Shopping Cart</h1>");
+        document.write("Price of item 1 is" + priceOfItem1 + "<br>");
+        document.write("Quantity of item 1 is " + orderedQuanOfItem1 + "<br>");
+        document.write("Price of item 2 is " + priceOfItem2 + "<br>");
+        document.write("Quantity of item 2 is " + orderedQuanOfItem2 + "<br>");
+        document.write("Shipping charges is " + shippingcharges + "<br><br>");
+        document.write("Total cost of your order is " + totalcost + "<hr>");
+
+        //Question 8
+        var totalMarks = 500;
+        var obtMarks = 423;
+        var percentage = obtMarks/totalMarks *100;
+        document.write("<h1>Marks Sheet</h1>");
+        document.write("Total Marks: " + totalMarks + "<br>");
+        document.write("Marks obtained: " + obtMarks + "<br>");
+        document.write("Percentage: " + percentage + "%<hr>");
+
+        //Question 9
+        var currency = 10*104.80 + 25*28; 
+        document.write("<h1>Currency in PKR</h1>");
+        document.write("Total Currency in PKR: " + currency +"<hr>");
+
+        //Question 10
+        var number = 2;
+            //a,b,c
+            number = (number+5)*10/2; 
+
+        //Question 11
+            //a
+            var currentYear = 2018;
+            //b
+            var birthYear = 1995;
+            //c
+            var age = currentYear - birthYear;
+
+        document.write("<h1>Age Calculator</h1>");   
+         document.write("Current year: " + currentYear +"<br>");
+         document.write("Birth year: " + birthYear +"<br>");
+         document.write("Your Age is: " + age +"<hr>"); 
+
+        //Question 12
+        document.write("<h1>The Geometrizer</h1>");
+            //a
+            var radius = 25;
+            document.write(" Radius of a circle: " + radius +"<br>");
+            //b
+            var circumference = 2*3.142*radius;
+            document.write( "The circumference is: " + circumference +"<br>");
+            var area = 3.142*(radius*radius) ;        
+            document.write( "The area is: " + area +"<hr>");
+
+        //Question 13
+            //a
+            var snack = " Chocolato";
+            //b
+            var age = 23;
+            //c
+            var maxAge = 70;
+            //d
+            var snackPerDay = 5;
+            //e
+            var lifeSnacks = (maxAge-age)*snackPerDay;
+        
+        document.write("<h1>The Lifetime Supply Calculator</h1>");
+         document.write("Favorite Snack: " + snack +"<br>");
+         document.write("Current age: " + age +"<br>");
+         document.write("Maximum age: " + maxAge +"<br>");
+         document.write("Amount of snack per day: " + snackPerDay +"<br>");
+         document.write("You will need " + lifeSnacks + snack + " to last you until the ripe old of " + maxAge + "<hr>");       
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

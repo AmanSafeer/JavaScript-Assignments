@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .q3{
+            color:#6e3302;
+            outline: #0e0600;
+            font-size: 30px;
+            text-decoration: none;
+        }
+        .q3:hover{
+            text-decoration: underline;
+        }
+    </style>
+
+    
+</head>
+<body>
+      
+    <!-- Question 1 -->
+    <a href="javascript:void(0)" onClick="greet()">Click me!</a><hr>
+
+    <!-- Question 2 -->
+    <a href="javascript:void(0)" onClick="thanksAlert()"><img src="images/mob1.png"></a>
+    <a href="javascript:void(0)" onClick="thanksAlert()"><img src="images/mob2.png"></a>
+    <a href="javascript:void(0)" onClick="thanksAlert()"><img src="images/mob3.png"></a>
+    <a href="javascript:void(0)" onClick="thanksAlert()"><img src="images/mob4.png"></a><hr>
+    <!-- Question 3 -->
+    <a href="ques3.html"  class="q3">  Click here to see Question 3</a><br><hr>
+    <!-- Question 4 -->
+    <img src="images/img1.jpeg" width="600" height="400px" 
+        onMouseOver="src='images/img2.jpg';" onMouseOut="src='images/img1.jpeg'"><hr>
+
+    <!-- Question 5 -->
+    <button type="button"  onClick="counterIncrease()">Increase Counter</button>
+    <button type="button"  onClick="counterDecrease()">Decrease Counter</button>
+
+     <p>Counter: <span id="counter">0</span></p>
+
+        
+</body>
+
+<script type="text/javascript" src="events.js">
+
+    </script>
+</html>

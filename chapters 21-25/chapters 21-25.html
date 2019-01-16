@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chapters 21-25</title>
+    <script>
+        //Quesiton 1
+        var firstName=prompt("Enter your first name");
+        var secondName=prompt("Enter your second name");
+        var fullName=firstName+" "+secondName;
+        alert("Welcome to CMAD "+fullName);
+
+        //Question 2
+        var mobileName = prompt("Enter your favorite mobile phone");
+        document.write("My favorite phone is: "+mobileName+"<br>");
+        document.write("length of String:" +mobileName.length+"<hr>");
+
+        //Question 3
+        var nationality = "Pakistani";
+        document.write("String: "+ nationality+"<br>");
+        document.write("Index of 'n': "+ nationality.indexOf("n")+"<hr>");
+
+        //Question 4
+        var greet = "Hello World";
+        document.write("String: "+ greet+"<br>");
+        document.write("Index of 'l': "+ greet.lastIndexOf("l")+"<hr>");
+
+        //Question 5
+        var nationality2 = "Pakistani";
+        document.write("String: "+nationality2+"<br>");
+        document.write("Character at index 3: "+nationality2.charAt(3)+"<hr>");
+
+        //Question 6
+        var city = "Hyderabad";
+        for(var a=0; a<city.length; a++){
+            if(city.slice(a,a+5)=="Hyder"){
+                var newCity = city.slice(0,a) + "Islam" + city.slice(a+5);
+            }
+        }
+        document.write("City: "+city+"<br>");
+        document.write("After replacement: "+ newCity+"<hr>");
+
+        //Question 7
+        var message = "Ali and Sami are best friends. They play cricket and football together.";
+        var newMessage = message.replace(/and/g,"&");
+        document.write("message: "+message+"<br>");
+        document.write("After editing : "+ newMessage+"<hr>");
+
+        //Question 8
+        var string = "472";
+        var number = Number(string);
+        document.write("Value: "+string+"<br>");
+        document.write("Type: "+typeof(string)+"<br>");
+        document.write("Value: "+number+"<br>");
+        document.write("Value: "+typeof(number)+"<hr>");
+
+        //Question 9
+        var input = prompt("Enter Any word");
+        var upperCase = input.toUpperCase();
+        document.write("User input: "+input+"<br>");
+        document.write("Upper case: "+upperCase+"<hr>");
+
+        //Question 10
+        var userInput = prompt("Enter a word for capitalization");
+        var firstChar = userInput.slice(0,1);
+        var otherChar = userInput.slice(1);
+        firstChar = firstChar.toUpperCase();
+        otherChar = otherChar.toLowerCase();
+        var fullWord = firstChar+otherChar;
+        document.write("User input: "+userInput+"<br>");
+        document.write("Title case: "+fullWord+"<hr>");
+
+        //Question 11
+        var num = 35.36;
+        var toString = num.toString();
+        var dot = toString.indexOf(".");
+        if(dot !== -1){
+        var result = toString.slice(0,dot)+toString.slice(dot+1);
+        }
+        document.write("Number: "+num+"<br>");
+        document.write("Result: "+result+"<hr>");
+
+        //Question 12
+        var userName = prompt("Enter your name");
+        var symbol = "no";
+        for(var b=0; b<userName.length; b++){
+           if((userName.charCodeAt(b)>32 && userName.charCodeAt(b)<65)||(userName.charCodeAt(b)>90 && userName.charCodeAt(b)<97)||(userName.charCodeAt(b)>122)){
+             var symbol = "yes";
+           }
+        }
+            if(symbol==="yes"){
+                alert("please enter a valid user name");
+            }
+            else{
+                alert("correct user name");
+            }
+            document.write("<hr>");
+
+        //Question 13
+        var A = ["cake","apple pie","cookie", "chips","patties"];
+        var order = prompt("Welcome to ABC bakery. What do you want");
+        var order = order.toLowerCase();
+        var available = false;
+        for(var c=0; c<A.length; c++){
+            if(order===A[c]){
+                available = true;
+                var itemIndex = A.indexOf(order)
+            }
+        }    
+        if(available === true){
+            document.write(order+" is available at index "+itemIndex+" in our bakery");
+        }
+        else{
+            document.write("We are sorry " +order+ " is not avaiable in our bakery");
+        }
+        document.write("<hr>");
+
+        //Question 14
+        var password = prompt("Enter your password");
+        var alertForUser;
+        var passChar;
+        for(var d=0; d<password.length; d++){
+            if(password.charCodeAt(d)<48 || password.charCodeAt(d)>57 && password.charCodeAt(d)<65 || password.charCodeAt(d)>90 && password.charCodeAt(d)<97 || password.charCodeAt(d)>122){
+                passChar=false;
+                break;
+            }
+            else{
+                passChar=true;
+            }
+        }       
+           if(passChar===true){
+                if(password.charCodeAt(0)<48 || password.charCodeAt(0)>57){
+                    if(password.length >= 6){
+                         alertForUser = "Correct password"; 
+                    }
+                    else{
+                         alertForUser = "Please enter valid password. It must be 6 characters long"
+                    }
+                }
+                else{
+                     alertForUser = "Please enter valid password. It should not start with a number"
+                }
+            }
+            else{
+                 alertForUser = "Please enter valid password. It should contain alphabets and numbers only";
+            }
+        
+        document.write("Enter password: "+ password+"<br>");
+        document.write(alertForUser);
+        document.write("<hr>");
+
+        //Question 15
+        var university = "University of Karachi";
+        university = university.split("");
+        for(e=0; e<university.length; e++){
+            document.write(university[e]+"<br>");
+        }
+        document.write("<hr>");
+
+        //Question 16
+        var usercountry = "Pakistan";
+        var lastCharacter = usercountry.slice(usercountry.length-1);
+        document.write("User input: "+ usercountry+"<br>");
+        document.write("Last character of input: " + lastCharacter);
+        document.write("<hr>");
+
+        //Question 17
+        var phrase = "The quick brown fox jumps over the lazy dog.";
+        var phraseLowerCase = phrase.toLowerCase()
+        var count = 0;
+        for(var f=0; f<phraseLowerCase.length; f++){
+            if(phraseLowerCase.slice(f,f+3)==="the"){
+                count+=1;
+            }
+        }
+        document.write("Text: "+ phrase+"<br>");
+        document.write("there are "+count+" occurrence(s) of word 'the'");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

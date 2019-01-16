@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chapter 17-20</title>
+    <script>
+        //Question 1
+        var array = [];
+
+        //Question 2
+        array[0] = ["0123","1012","2101"];
+        document.write(array[0][0]+"<br>"+array[0][1]+"<br>"+array[0][2]+"<br><hr>");
+
+        //Question 3
+        for(var i=1; i<11; i++){
+            document.write(i+"<br>");
+        }
+        document.write("<hr>");
+
+        //Question 4
+        var tableNumber = +prompt("Enter a number to show its multiplication table");
+        var tableLength = +prompt("Enter table length");
+        for (var j=1; j<(tableLength+1); j++){
+            document.write(tableNumber+" x "+j+" = "+(tableNumber*j)+"<br>");
+        }
+        document.write("<hr>");
+        //Question 5
+        var fruits = ["apple", "banana", "mango", "orange","strawberry"];
+        for (var k=0; k<fruits.length; k++){
+            document.write(fruits[k]+"<br>");
+        }
+        document.write("<hr>");
+        //Question 6
+            //a
+            document.write("<br>Counting:<br> ");
+            for (var count=1; count<16; count++){
+                document.write(count+",");
+            }
+            document.write("<br>Reverse counting:<br> ");
+            //b
+            for (var reverse=10; reverse>0; reverse--){
+                document.write(reverse+",");
+            }
+            document.write("<br>Odd:<br> ");
+            //c
+            for (var odd=1; odd<20; odd+=2){
+                document.write(odd+",");
+            }
+            document.write("<br>Even:<br>");
+            //d
+            for (var even=0; even<21; even+=2){
+                document.write(even+",");
+            }
+            document.write("<br>Series:<br> ");
+            //e
+            for (var even=2; even<21; even+=2){
+                document.write(even+"k,");
+            }
+        document.write("<hr>");    
+
+        //Question 7
+        var items = ["cake", "apple pie", "cookie", "chips", "patties"];
+        var input = prompt("Welcome to ABC bakery, What do you want to order sir/ma'am?"); 
+        var userInput = input;
+        var avaiable= "no";
+        for(a=0; a<items.length; a++){
+         if (userInput===items[a]){
+              avaiable = "yes"; 
+            var index = a;
+            break; 
+         }
+        }
+        if (avaiable==="yes"){
+                document.write(userInput+" is avaiable at index" +index+ " in our bakery.");
+        }
+        else{
+             document.write("We are sorry. "+userInput+" is not available in our bakery.");
+         }
+         document.write("<hr>");
+
+         //Question 8
+         var largestNum = ["24","53","78","91","12"];
+         largestNum=largestNum.sort();
+         document.write("The largest number is "+ largestNum[largestNum.length-1]);
+         document.write("<hr>");
+         //Question 9
+         var smallestNum = ["24","53","78","91","12"];
+         smallestNum=smallestNum.sort();
+         document.write("The smallest number is "+ smallestNum[0]);
+         document.write("<hr>");
+
+         //Question 10
+        for(number=5; number<101; number+=5){
+            document.write(number+", ");
+        }
+        document.write("<hr>");
+
+        //Question 11
+        var scores=[12,45,3,22,34,50];
+        userNumber = prompt("Enter a number");
+        for(var num=0; num<scores.length; num++){
+            document.write(scores[num]+", ");
+            if(userNumber==scores[num]){
+                break;
+            }
+        }
+        document.write("<hr>");
+
+       //Question 13
+       var total=1;
+       for(product=1; product<8; product+=2){
+           total=total*product;
+       }
+       document.write(total);
+       document.write("<hr>");
+
+       //Question 14
+        var usrInput=+prompt("enter number of stars");
+       var usrInput2=usrInput;
+        for(var i=0; i<(usrInput+1); i++){
+            for(var j=0; j<(usrInput2+1); j++){
+                document.write("*");
+            }
+            usrInput2=usrInput2-1
+            document.write("<br>");
+        }
+        document.write("<hr>");
+
+        //Question 15
+            //a
+            document.write("a:<br>");
+            var lines=+prompt("a: enter number of lines");
+            for(var k=0; k<(lines+1); k++){
+                for(var l=0; l<(lines+1); l++){
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+            //b
+            document.write("b:<br>");
+            var stars="*"
+            var starsNum=+prompt("b: enter number of stars");
+            for(m=1; m<(starsNum+1); m++){
+                document.write(stars+"<br>");
+                stars=stars+"*";
+            }
+            //c
+            document.write("c:<br>");
+            var numOfstars=+prompt("c: enter number of stars");
+            var numOfstars2=numOfstars;
+                for(var i=0; i<(numOfstars+1); i++){
+                    for(var j=0; j<(numOfstars2+1); j++){
+                        document.write("*");
+                    }
+                    numOfstars2=numOfstars2-1
+                    document.write("<br>");
+                }
+                document.write("<hr>");
+            //d
+            document.write("d:<br>");
+            var newStars="*";
+            var newStarsNum=+prompt("d: enter number of stars");
+            for(n=1; n<(newStarsNum+1); n++){
+                document.write(newStars+"<br>");
+                newStars=newStars+"*";
+            } 
+            var newNumOfstars=newStarsNum;
+            var newNumOfstars2=newNumOfstars;
+                for(var o=0; o<(newNumOfstars); o++){
+                    for(var p=0; p<(newNumOfstars2-1); p++){
+                        document.write("*");
+                    }
+                    newNumOfstars2=newNumOfstars2-1
+                    document.write("<br>");
+                }
+                document.write("<hr>");   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

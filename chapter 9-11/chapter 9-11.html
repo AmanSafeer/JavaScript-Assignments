@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //Chapter 9-11
+        //Question 1
+        var city = prompt("Enter your city name");
+        if (city === "Karachi"){
+            alert("Welcome to city of lights");
+        }
+        //Question 2
+        var gender = prompt("Enter your gender");
+        if (gender === "male"){
+            alert("Good Morning Sir");
+        }
+        if(gender === "female"){
+            alert("Good Morning Ma'am")
+        }
+        //Question 3
+        var signalColor = prompt("Enter traffic signal");
+        if (signalColor === "red"){
+            alert("must stop");
+        }
+        else if (signalColor === "yellow"){
+            alert("ready to move");
+        }
+        else if (signalColor === "green"){
+            alert("move now");
+        }
+        //Question 4
+        var fuel = +prompt("how much fuel in car");
+        if ((fuel < 0.25) + " litres"){
+            alert("Please refill the fuel in your car");
+        }
+        //Question 5
+            //a = true
+            //b = false
+            //c = condition 2 and 4 are true
+            //d = true
+            //e = true
+            
+        //Question 6
+        var obtMarks = +prompt("Enter your obtained marks");
+        var totalMarks = +prompt("Enter total marks");
+        var per = obtMarks/totalMarks*100;
+
+        document.write("<h1>Mark Sheet</h1><br>");
+        document.write("Total marks: " + totalMarks + "<br>");
+        document.write("Marks obtained: " + obtMarks + "<br>");
+        document.write("Percentage: " + per + "%<br>");
+
+        if(per >= 80){
+            document.write("Grade: A-one <br>");
+            document.write("Remarks: Exellent");
+        }
+        else if(per >= 70){
+            document.write("Grade: A <br>");
+            document.write("Remarks: good");
+        }         
+        else if(per >= 60){
+            document.write("Grade: B <br>");
+            document.write("Remarks: You need to improve");
+        } 
+        else if(per < 60){
+            document.write("Grade :Fail <br>");
+            document.write("Remarks: Sorry");
+        } 
+        //Question 7
+            //a    
+            var num = 6;
+            var guess = prompt("Guess the secret num");
+            if (guess == num){
+                alert("Bingo! Correct");
+            }
+            //b
+            else if (guess == ++num){
+                alert("Close enough to the correct answer.")
+            }
+         //Question 8
+         //Question 9
+
+         //Question 10
+         var temp = +prompt("Enter the temperature");
+            //a    
+            if (temp > 40){
+                alert("It is too hot outside.");
+            }
+            //b
+            else if (temp > 30){
+                alert("The Weather today is Normal.");
+            }
+            //c
+            else if (temp > 20){
+                alert("Today’s Weather is cool.");
+            }
+            //d
+            else if (temp > 10){
+                alert("OMG! Today’s weather is so Cool.");
+            }  
+         //Question 11
+            //a
+            var firstNum = +prompt("Enter the first number");
+            //b
+            var secondNum = +prompt("Enter the second number");
+            //c
+            var operation = prompt("Enter the operation(+,-,*,/,%) between numbers");
+
+            if (operation === "+"){
+                alert(firstNum+secondNum);
+            }
+            else if (operation === "-"){
+                alert(firstNum-secondNum);
+            }
+            else if (operation === "*"){
+                alert(firstNum*secondNum);
+            }
+            else if (operation === "/"){
+                alert(firstNum/secondNum);
+            }
+            else if (operation === "%"){
+                alert(firstNum%secondNum);
+            }
+
+ 
+                
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+#images{
+    width: 90%;
+    margin: 0px auto;
+    text-align: center;
+}        
+.format {
+ display: inline-block;   
+width: 250px;
+height: 230px;
+margin: 5px;
+cursor: pointer;
+}
+.format:hover{
+    width: 260px;
+    height: 240px;
+}
+
+/* Modal starts */
+
+/* The Modal (background) */
+
+.modal {
+display:none;
+position: fixed;
+z-index: 500;
+padding-top: 100px;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Content (image) */
+
+.modal-content {
+margin: auto;
+display: block;
+width: 80%;
+max-width: 700px;
+}
+
+/* Add Animation - Zoom in the Modal */
+
+.modal-open {
+animation-name: zoomIn;
+animation-duration: 0.6s;
+}
+
+@keyframes zoomIn {
+from {
+    transform: scale(0)
+}
+to {
+    transform: scale(1)
+}
+}
+
+.modal-close {
+animation-name: zoomOut;
+animation-duration: 0.6s;
+}
+
+@keyframes zoomOut {
+from {
+    transform: scale(1)
+}
+to {
+    transform: scale(0)
+}
+}
+
+
+
+/* The Close Button */
+
+.close {
+position: absolute;
+top: 50px;
+right: 10%;
+color: #f1f1f1;
+font-size: 40px;
+font-weight: normal;
+transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+color: #bbb;
+text-decoration: none;
+cursor: pointer;
+}
+        
+/*Question 2*/
+.q2{
+            color:#6e3302;
+            outline: #0e0600;
+            font-size: 30px;
+            text-decoration: none;
+        }
+        .q2:hover{
+            text-decoration: underline;
+        }
+</style>
+</head>
+
+<body>
+        <div id="images" ></div>
+     <div id="modal" class="modal">
+        <span class="close" id="modal-close" onclick="onClosedImagModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div><hr>
+    
+   <p><a href="ques2.html" class="q2">Click here to see Question 2</a></p>
+
+<script>
+       var imagesPath = ["1.jpg","2.jpg","3.jpg","4.png","5.jpg","6.jpg","7.png","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.png","15.jpg"];
+    function showImages(){
+        for (var i=0; i<imagesPath.length; i++){
+            document.getElementById("images").innerHTML+="<img class='format' src='images/others/"+imagesPath[i]+"'onClick='modelOpen("+i+")'>";
+        } 
+    }
+    showImages()
+
+    function modelOpen(i){
+        var modal = document.getElementById("modal");
+        var modalImg = modal.getElementsByClassName("modal-content")[0];
+        modal.classList.add('modal-open');
+        modal.classList.remove('modal-close');
+        modal.style.display= "block";
+        modalImg.src="images/others/"+imagesPath[i];
+    }
+    function onClosedImagModal(){
+        var modal = document.getElementById("modal");
+        modal.classList.remove('modal-open');
+        modal.classList.add('modal-close');
+        setTimeout(()=>{ modal.style.display = "none"; }, 550);
+    }
+</script>
+   
+</body>
+</html>

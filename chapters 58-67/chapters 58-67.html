@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1> DOM </h1>
+        <div id="form-content" class="content">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" />
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" />
+            <label for="email">Email</label>
+            <input type="text" id="email" />
+        </div>
+        <div id="main-content" class="content">
+            <p class="render"> First Name : Alex</p>
+            <p class="render" id="lastName">Last Name: Bank</p>
+            <p class="render"> Email : alexbank@example.com</p>
+            <p class="render"> Country : Pakistan </p>
+            <p class="render"> contact : +92 300 1234567</p></div>
+    </div>
+
+     <!-- <div><h1> DOM </h1><div
+        id="form-content" class="content"><label for="first-name">First Name</label><input type="text" id="first-name"/><label for="last-name">Last Name</label><input type="text" id="last-name"/><label for="email">Email</label><input type="text" id="email"/></div><div
+        id="main-content" class="content"><p class="render"> First Name : Alex</p><p class="render" id="lastName">Last Name: Bank</p><p class="render"> Email : alexbank@example.com</p><p class="render"> Country : Pakistan </p><p class="render"> contact : +92 300 1234567</p></div></div
+    >   -->
+<hr>
+    <script>
+    //Question 1   
+    //part 1 
+       var mainContent =  document.getElementById('main-content');
+
+    //part 2
+    function contentchilds(){   
+       var ContentChilds =mainContent.childNodes;
+      
+        for(var i=0; i<ContentChilds.length; i++){
+            document.write(ContentChilds[i].innerHTML+'<br>');
+        }
+    }
+    contentchilds();
+
+    document.write('<hr>');
+    //part 3
+    function contentelements(){
+        var contentPara= mainContent.getElementsByTagName('p');
+        for(var i=0; i<contentPara.length; i++){
+            document.write(contentPara[i].innerHTML+'<br>');
+        }
+    }
+    contentelements();
+
+    //part 4 & 5
+    function fillInput(){
+        document.getElementById('first-name').value = 'Alex';
+        document.getElementById('last-name').value = 'Bank';
+        document.getElementById('email').value = 'alexbank@example.com';
+    }
+    fillInput();
+
+    document.write('<hr>');
+
+    //Question 2
+    //part1
+    var formContentNodeType = document.getElementById('form-content').nodeType;
+    document.write("form-content Node type is: " +formContentNodeType);
+    document.write('<hr>');
+
+    //part2
+    var lastName, _child;
+    lastName = document.getElementById('lastName');
+    _child = lastName.childNodes[0];
+    document.write("LastName node type is: " +lastName.nodeType+"<br>");
+    document.write("LastName child's Node type is: " +_child.nodeType);
+
+    //part3
+    var lastNameChildNode = document.getElementById('lastName').childNodes[0];
+    lastNameChildNode.nodeValue = "Last Name: John";
+
+    //part 4
+    document.getElementById('main-content').firstChild;
+    document.getElementById('main-content').lastChild;
+
+    //part5
+    document.getElementById('last-name').previousSibling;
+    document.getElementById('last-name').nextSibling;
+
+    //part6
+    document.getElementById('email').parentNode;
+    document.getElementById('email').nodeType;
+ </script>
+</body>
+</html>

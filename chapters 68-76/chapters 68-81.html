@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form onSubmit="">
+        <table>
+            <tr><td>Name:</td><td><input class="name" type="text" name="name" placeholder="Name" ></td></tr>
+            <tr><td>Gender:</td><td><input class="gender" type="radio" name="gender" value="Male" >Male <input type="radio" name="gender" value="female">female </td></tr>
+            <tr><td>Education:</td><td>
+                <select class="education" name="Education" >
+                    <option>None</option>
+                    <option>Maticulation</option>
+                    <option>Intermidiate</option>
+                    <option>Graduation</option>
+                    <option>Masters</option>
+                </select>
+            </td></tr>
+            <tr><td>Profession:</td><td>
+                    <select class="profession" name="Profession" >
+                        <option>None</option>
+                        <option>Teacher</option>
+                        <option>Web developer</option>
+                        <option>Software programmer</option>
+                        <option>Graphic designer</option>
+                    </select>
+                </td></tr>
+            <tr><td>Address:</td><td><textarea class="address" name="Address" placeholder="Address"></textarea></td></tr>
+            <tr><td colspan="2"><Button type="button" onClick="getInformation()">Submit</Button></td></tr>   
+        </table>
+    </form><br>
+    <div class="newDiv"></div>
+    <hr>
+    <script>
+        //Question  1
+            var itemsArray = [
+                {name:"Juice", price: "50", quantity: "3"},
+                {name:"Cookie", price: "30", quantity: "9"},
+                {name:"Shirt", price: "880", quantity: "1"},
+                {name:"Pen", price: "100", quantity: "1"},
+            ];
+            //calculation
+            function calculation(){
+                var total = 0;   
+                for(var i=0; i<itemsArray.length; i++){
+                document.write(itemsArray[i].name + ": "+ itemsArray[i].price*itemsArray[i].quantity+"<br>");
+                    total += itemsArray[i].price*itemsArray[i].quantity;
+                }
+                return total
+            }
+            //each item price
+            document.write("<h3>Each item total price:</h3>");
+            var totalPrice = calculation();   
+
+            //total price    
+            document.write("<h3>All total price:</h3>"); 
+            document.write("Total price is: "+ totalPrice+"<hr>" ) ;
+
+        //Question  2
+            var userData = {
+                name: "Amanullah",
+                email: "amansafeer5@gmail.com",
+                password: "aman1234",
+                age: "23",
+                gender: "Male",
+                city: "Karachi",
+                country: "Pakistan"
+            } 
+            var checkage = "age" in userData;
+            var checkcountry = "country" in userData; 
+            var checkfirstName = "firstName" in userData;
+            var checkLastName = "lastName" in userData;
+
+            document.write(checkage+" "+checkcountry+" "+checkfirstName+" "+checkLastName+"<br><hr>");
+
+         //Question 3
+         function Student (name, gender, className, contact , address){
+                this.name = name;
+                this.gender = gender;
+                this.className = className;
+                this.contact = contact;
+                this.address = address;
+            }
+            student1 = new Student ("Aman","Male" ,"12" ,"1234567" ,"Korangi");
+            student2 = new Student ("Usama","Male" ,"10" ,"1234567" ,"Korangi");
+            document.write(student1.name +" "+student2.name);
+
+         //Question 4   
+         var getName, getGender, getEducation, getProfession, getAddress, newDiv, student = []; 
+
+        function getInformation(){
+            getName = document.getElementsByClassName("name")[0].value;
+            //getGender
+            var genderValue = document.getElementsByName("gender");
+            for(var g=0; g<genderValue.length; g++){
+                if(genderValue[g].checked){
+                     getGender = genderValue[g].value;
+                }
+            }
+            getEducation = document.getElementsByClassName("education")[0].value;
+            getProfession = document.getElementsByClassName("profession")[0].value;
+            getAddress = document.getElementsByClassName("address")[0].value;
+            newDiv = document.getElementsByClassName("newDiv")[0];
+            addInformation();
+            document.getElementsByClassName("name")[0].value=""
+            
+        }
+        function addInformation(){
+           
+            newDiv.innerHTML = "";
+
+            function PersonalInformation(name, gender, education, profession, address){
+                this.name = name;
+                this.gender = gender;
+                this.education = education;
+                this.profession = profession;
+                this.address = address;
+            }
+            student.push(new PersonalInformation(getName, getGender, getEducation, getProfession, getAddress));
+
+            var studentStr = JSON.stringify(student);
+            localStorage.setItem("Students",studentStr);
+            var studentGet = localStorage.getItem("Students") 
+            var studentParse = JSON.parse(studentGet)
+
+            for(var i=0; i<studentParse.length; i++){
+               newDiv.innerHTML += "<b>Name:</b> " +studentParse[i].name + " | <b>Gender:</b> " + studentParse[i].gender  + " | <b>Education:</b> " + studentParse[i].education + " | <b>Profession:</b> " +studentParse[i].profession + " | <b>Address:</b> " +studentParse[i].address + "<br>";
+               
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

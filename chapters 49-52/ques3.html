@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background: #fffbdf;
+        }
+        .showTable, .decreaseTableWidth, .form {
+            margin:20px 0px;
+            width: 100%;
+            text-align: center;
+           border: 3px solid #865700;
+            border-collapse: separate;
+        }
+        input{
+            margin-bottom:5px;
+            height: 20px;
+            width: 90%;
+        }
+        tr{
+            height:30px;            
+        }
+        td{
+            
+            background: #b8d174;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color:#4b2e00;
+            text-shadow: 2px 2px 5px #fffad1;
+        }        
+        thead>tr{
+            font-size: 25px;
+           
+            height:50px;
+            background:#086E8D; 
+            color:white;
+            text-shadow: 1px 3px 10px #000000;
+        }
+        .submit{
+            width: 100%;
+            height: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            height:40px;
+            background-color: #E0B78B; 
+            text-shadow: 3px 3px 10px #ffffff;
+        }
+        .submit:active{
+            border: 5px inset #E0B78B;
+        }
+        .edit, .delete{
+            background: rgb(240, 240, 240);
+            width: 40%;
+            height:30px;
+        }
+        .showEditingForm{
+            width: 70%;
+            margin: 0px auto;
+        }
+        .save{
+            float: left;
+            width: 50%;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table class="form">
+            <thead><tr><th colspan="2">Registration form</th></tr></thead>
+            <tr><td>Name:</td><td><input type="text" id="name" autocomplete="off" placeholder="Name"></td></tr> 
+            <tr><td>Class:</td><td><input type="text" id="class" autocomplete="off" placeholder="Class"></td></tr> 
+            <tr><td>Student ID:</td><td><input type="text" id="id" autocomplete="off" placeholder="Student ID"></td></tr>
+            <tr><td colspan="2"><button type="button" onClick="getData()" class="submit ">+ Add Student</button></td></tr>
+        </table>
+    </form>
+
+    <div class="tableSection">
+        <table id="table">
+        </table> 
+        <!-- after submiting form the class "showTable" will be added in table element -->
+
+        <form id="editDetialsForm" class="hidden">
+             <!-- after clicking edit button the class "hidden" will be changed to "showEditingForm" to appear th form-->
+            <table class="form">
+                <thead><tr><th colspan="2" id="SeriolNo"></th></tr></thead>
+                <tr><td>Name:</td><td><input type="text" id="newName" autocomplete="off" placeholder="Name"></td></tr> 
+                <tr><td>Class:</td><td><input type="text" id="newClass" autocomplete="off" placeholder="Class"></td></tr> 
+                <tr><td>Student ID:</td><td><input type="text" id="newId" autocomplete="off" placeholder="Studet ID"></td></tr>
+                <tr><td colspan="2"><button type="button" onClick="save()" class="submit save">Save</button> <button type="button" onClick="Cancel()" class="submit save">Cancel</button></td></tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+
+        var studentsName = [] , studentsClass = [], studentsId = [], saveInd;
+        var getName, getClass, getId;
+
+        function getData(){
+            //getting values from form..
+            document.getElementById('editDetialsForm').className = "hidden";
+            getName = document.getElementById("name").value;
+            getClass = document.getElementById("class").value;
+            getId = document.getElementById("id").value;
+            //inserting values to arrays..
+            if ((getName !== "") || (getClass !== "") || (getId !== "")){
+                studentsName.push(getName);
+                studentsClass.push(getClass);
+                studentsId.push(getId);
+               
+            }
+            //empty the input field after submiting..
+            document.getElementById("name").value = "";
+            document.getElementById("class").value = "";
+            document.getElementById("id").value = "";
+            table();
+        }
+        function table(){
+            //creating studentslist...
+            var tableHead = document.getElementById('table');
+            tableHead.innerHTML = "";
+            tableHead.className = "showTable";
+            tableHead.innerHTML = "<thead><tr><th colspan='5'>Students list</th></tr></thead>";
+            tableHead.innerHTML += "<tr><th>S.No</th><th>Name</th><th>Class</th><th>ID</th><th>Update</th></tr>";
+
+            for(var i=0; i<studentsName.length; i++){
+                tableHead.innerHTML +="<tr><td>"+(i+1)+".</td><td>"+studentsName[i]+"</td><td>"+studentsClass[i]+"</td><td>"+studentsId[i]+"\
+                </td><td><button onClick='editItem("+i+")' class='edit'>Edit</button> <button onClick='deleteItem("+i+")' class='delete'>Delete</button></td></tr>";
+            }
+        }
+        function deleteItem(i){
+            //delete the row after clicking delete button..
+            studentsName.splice(i,1);
+            studentsClass.splice(i,1);
+            studentsId.splice(i,1);
+            table();
+            if(studentsName == ""){
+                document.getElementById('table').className = "hidden";
+            }
+        }
+        function editItem(i){
+             document.getElementById('editDetialsForm').className = "showEditingForm";            //show the form for editing after clicking edit button
+            document.getElementById('SeriolNo').innerHTML = "Editing Details (S.No: "+(i+1)+")";
+            // showing the inserted values in the table row.. 
+            document.getElementById('newName').value = studentsName[i];
+            document.getElementById('newClass').value = studentsClass[i];
+            document.getElementById('newId').value = studentsId[i];
+            saveInd = i;
+        }
+        function save(){   
+            //getting the inserted values  in editing form for renew..
+            var newName = document.getElementById('newName').value;
+            var newClass = document.getElementById('newClass').value;
+            var newId = document.getElementById('newId').value;
+            //inserting new values..
+            studentsName[saveInd] = newName;
+            studentsClass[saveInd] = newClass;
+            studentsId[saveInd] = newId;
+            //hidding editing form and increasing student list table..
+            document.getElementById('editDetialsForm').className = "hidden";
+             table();
+        }
+        function Cancel(){
+            studentsName[saveInd] = getName
+            studentsClass[saveInd] =  getClass
+            studentsId[saveInd] = getId
+            //hidding editing form and increasing student list table..
+            document.getElementById('editDetialsForm').className = "hidden";
+             table();
+        }
+    </script>
+</body>
+</html>
